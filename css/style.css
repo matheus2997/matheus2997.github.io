@@ -458,9 +458,6 @@ section .titulos::after{
     .max-width{
         padding: 0 23px;
     }
-    .cards{
-        flex-wrap: wrap;
-    }
     .card{
         width: 100%;
     }
