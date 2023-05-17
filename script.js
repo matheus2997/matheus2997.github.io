@@ -1,6 +1,8 @@
 const icon = document.getElementsByClassName('icon')[0]
 const menu = document.getElementsByClassName('menu-list')[0]
 const navbar = document.querySelector(".navbar");
+const mlogo = document.querySelector(".mlogo");
+
 
 icon.addEventListener('click',function(){
     if(icon.classList.contains('ativo')){
@@ -14,6 +16,7 @@ icon.addEventListener('click',function(){
 })
 window.onscroll = ()=>{
     this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    this.scrollY > 20 ? mlogo.classList.add("sticky") : mlogo.classList.remove("sticky");
 }
 //https://cdnjs.com/libraries/typed.js/2.0.11
 var typed = new Typed(".typing-2", {
