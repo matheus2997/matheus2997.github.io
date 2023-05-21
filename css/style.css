@@ -423,6 +423,13 @@ section .titulos::after{
     transform: translateX(50%) rotate(45deg);
     border-radius: 2px;
 }
+.habilidades .titulos::after{
+    content: "Estudando";
+}
+.habilidades .titulos::before{
+    width: 235px;
+    background: black;
+}
 @keyframes fillBars{
     from{
       width: 0;
