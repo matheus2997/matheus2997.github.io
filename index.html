@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevMatteo</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!-- Google fonts Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   </head>
 <body>
-  <header>
+  <header class="barra-de-navegacao">
     <nav class="navbar">
       <div class="max-width">
         <div class="logo">
@@ -45,7 +46,7 @@
       <div id="bg"></div>
   </div>
 
-  <section>
+  <section class="home">
     <div class="max-width">
      <div class="inicio">
       <div class="boxlua"><img src="img/lua.png" id="lua"></div>
@@ -53,15 +54,12 @@
       <div class="title">
         <h1>Olá, me chamo Matheus<br></h1>
         <span>Bem-vindo ao meu Portfolio:<br>Eu sou: <span class="typing-2"></span></span>
-        <div class="information">
-          <div class="menuToggle"></div>
-          <div class="menu">
-            <ul>
-              <li><a href="https://wa.me/5585999576576?text=Segue%20contato:"><i class='bx bxl-whatsapp' ></i></a></li>
-              <li><a href="https://www.linkedin.com/in/matheusbolino/"><i class='bx bxl-linkedin-square' ></i></a></li>
-              <li><a href="https://github.com/matheus2997"><i class='bx bxl-github' ></i></a></li>
-            </ul>
-          </div>
+        <div class="menu">
+          <ul>
+            <li><a href="https://wa.me/5585999576576?text=Segue%20contato:" target="_blank"><i class='bx bxl-whatsapp' ></i></a></li>
+            <li><a href="https://www.linkedin.com/in/matheusbolino/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a></li>
+            <li><a href="https://github.com/matheus2997" target="_blank"><i class='bx bxl-github' ></i></a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -73,7 +71,7 @@
         <h2 class="titulos">Sobre mim</h2>
         <div class="sobre-content">
             <div class="column left">
-                <img src="img/boba.jpg" alt="">
+                <img src="img/profile.jpeg" alt="">
             </div>
             <div class="column right">
                 <div class="text">Olá me chamo Matheus, conheça um pouco sobre mim:</div>
@@ -134,21 +132,21 @@
                 <div class="skill">
                   <div class="skill-name">HTML</div>
                   <div class="skill-bar">
-                    <div class="skill-per" per="45%" style="max-width:45%"></div>
+                    <div class="skill-per" per="60%" style="max-width:60%"></div>
                   </div>
                 </div>
               
                 <div class="skill">
                   <div class="skill-name">CSS</div>
                   <div class="skill-bar">
-                    <div class="skill-per" per="45%" style="max-width:45%"></div>
+                    <div class="skill-per" per="60%" style="max-width:60%"></div>
                   </div>
                 </div>
               
                 <div class="skill">
                   <div class="skill-name">Js</div>
                   <div class="skill-bar">
-                    <div class="skill-per" per="15%" style="max-width:15%"></div>
+                    <div class="skill-per" per="45%" style="max-width:45%"></div>
                   </div>
                 </div>
 
@@ -164,9 +162,63 @@
     </div>
   </section>
 
+  <section class="slide-cert">
+    <div class="max-width">
+      <h2 class="titulos">Certificados</h2>
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="img/slide/html.PNG" alt="img" draggable="false">
+          <img src="img/slide/slide2 (1).jpg" alt="img" draggable="false">
+          <img src="img/slide/slide2 (1).png" alt="img" draggable="false">
+          <img src="img/slide/slide2 (1).webp" alt="img" draggable="false">
+          <img src="img/slide/slide2 (2).jpg" alt="img" draggable="false">
+          <img src="img/slide/slide2 (3).jpg" alt="img" draggable="false">
+          <img src="img/slide/slide2 (4).jpg" alt="img" draggable="false">
+        </div>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+    </div>
+  </section>
 
+  <section class="contact">
+    <div class="max-width">
+        <h2 class="titulos">Contate-me</h2>
+        <div class="contact-content">
+          <div class="column right">
+            <h3>Entre em Contato</h3>
+            <p>Olá, sou Matheus, um estudante de desenvolvimento web em busca de oportunidades de estágio. Estou disponível e entusiasmado para contribuir com meus conhecimentos e aprender com projetos desafiadores. Contate-me para discutirmos possíveis colaborações.</p>
+            <h4>Nome</h4>
+            <h6>Matheus Felipe</h6>
+            <i class='bx bxs-user'></i>
+            <h4>Localização</h4>
+            <h6>Fortaleza/CE - Brasil</h6>
+            <i class='bx bxl-periscope'></i>
+            <h4>Email</h4>
+            <h6>matheusfelipe2997@yahoo.com.br</h6>
+            <i class='bx bx-paper-plane'></i>
+          </div>
+          <div class="column left">
+            <h3>Contate-me</h3>
+            <form data-form action="https://formsubmit.co/ajax/matheusfelipe2997@gmail.com" method="POST">
+              <input placeholder="  Nome" type="text" name="nome" id="nome" required/>
+              <input placeholder="  Email" type="email" name="email" id="email" required/>
+              <input placeholder="  Assunto" type="assunto" name="assunto" id="assunto" required/>
+              <textarea placeholder="  Mensagem" name="mensagem"></textarea>
+              <button data-button type="submit">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>Desenvolvido por <a href="https://github.com/matheus2997">matheus2997</a> |  © 2023 Todos os direitos reservados.</p>
+  </footer>
 
   <script src="particles.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>

@@ -20,7 +20,7 @@
     background-position: center;
     background-attachment: fixed;
 }
-.sobre .sobre-content, .habilidades .skills-content, .cards{
+.sobre .sobre-content, .habilidades .skills-content, .cards, .contact-content{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -67,99 +67,22 @@
 .title h1{
     font-size: 80px;
 }
-.information{
-    position: relative;
-    display: flex;
-    margin-top: 3%;
-    width: 30%;
-    height: 0px;
-    
-}
-.menuToggle{
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 70px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    
-}
-.menuToggle::before{
-    content: '+';
-    position: absolute;
-    font-size: 2em;
-    font-weight: 200;
-    color: #4292bf;
-    transition: 1.5s;
-}
-.menuToggle.active::before{
-    transform: rotate(225deg);
- }
-.menu{
-    position: absolute;
-    width: 5px; height: 30px;
-    border-radius: 70px;
-    z-index: -1;
-    transition: transform 0.5s, width 0.5s, height 0.5s;
-    transition-delay: 1s, 0.5s, 0.5s;
-    transition-timing-function: cubic- bezier(0.075, 0.82, 0.165, 1);
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    }
-.menuToggle.active ~ .menu{
-    width: 240px;
-    height: 70px;
-    z-index: 1;
-    transform: translateX(73px);
-    transition-delay: 0s, 0.5s, 0.5s;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-}
-.menuToggle.active ~ .menu::before
-  {
-    transition-delay: 0.5s;
-    bottom: -8px;
-}
 .menu ul{
+    margin-top: 20px;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 70px;
     gap: 40px;
 }
-.menu ul li{
-    list-style: none;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-30px);
-    transition: 0.25s;
-    transition-delay: calc(0s + var(--i));
-}
-.menuToggle.active ~ .menu ul  li{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0px);
-    transition-delay: calc(0.75s + var(--i));
+.menu li{
+    display: block;
+    text-decoration: none;
 }
 .menu ul li a{
-    display: block;
-    font-size: 2em;
+    font-size: 50px;
     text-decoration: none;
     color: #fff;
 }
-
 /*.banner{
     background: url("/img/mandalorian.jpg") no-repeat;
     height: 100vh;
@@ -283,12 +206,12 @@ section .titulos::after{
     height: 400px;
     width: 400px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 50%;
 }
 .sobre .sobre-content .right{
     width: 55%;
 }
-.sobre .sobre-content .right .text, .skills-content .right .text, .skills-content .left .text {
+.sobre .sobre-content .right .text, .skills-content .right .text, .skills-content .left .text, .contact h3{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -314,7 +237,7 @@ section .titulos::after{
     color: #fff;
     background: crimson;
 }
-.services{
+.services, .slide-cert{
     background: #0e0d0d;
     width: 100%;
     display: flex;
@@ -369,13 +292,10 @@ section .titulos::after{
 .habilidades{
     text-align: justify;
 }
-.skills-content{
+.skills-content, .contact-content{
     display: -webkit-inline-box!important;
 }
-.skills-content .right{
-    width: 50%
-}
-.skills-content .left{
+.skills-content .right, .skills-content .left, .contact .left, .contact .right{
     width: 50%
 }
 .skills{
@@ -438,7 +358,164 @@ section .titulos::after{
       width: 100%;
     }
 }
-
+.slide-cert .titulos::after{
+    content: "Cursos";
+    background: #0e0d0d;
+}
+.slide-cert .titulos::before{
+    width: 240px;
+    background: #fff;
+}
+.wrapper{
+    display: flex;
+    max-width: 1200px;
+    position: relative;
+}
+.wrapper i{
+    top: 45%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+.wrapper i:active{
+    transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+    background: #f2f2f2;
+}
+.wrapper i:first-child{
+    left: -22px;
+    display: none;
+}
+.wrapper i:last-child{
+    right: -22px;
+}
+.wrapper .carousel{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    margin-bottom: 80px;
+}
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.carousel.dragging img{
+    pointer-events: none;
+}
+.carousel img{
+    height: 400px;
+    user-select: none;
+    margin-left: 14px;
+    width: 50%;
+}
+.carousel img:first-child{
+    margin-left: 0px;
+}
+.contact h4{
+    width: 0;
+    position: relative;
+    left: 60px;
+    font-size: 15px;
+    top: 40px;
+}
+.contact h6{
+    width: 200px;
+    position: relative;
+    left: 60px;
+    font-size: 15px;
+    color: #454d5a;
+    top: 35px;
+}
+.contact .right p{
+    text-align: justify;
+    margin-right: 20px;
+}
+.contact .right i{
+    color: #4292bf;
+    font-size: 35px;
+}
+.contact .titulos::after{
+    content: "Formulário";
+}
+.contact .titulos::before{
+    width: 250px;
+}
+.contact input{
+    padding-left: 10px; 
+    font-size: 20px;
+    border: 1px solid #4e5663;
+    width: 49.5%;
+    height: 45px;
+    border-radius: 5px;
+}
+input::placeholder {
+    font-size: 15px; 
+}
+#assunto{
+    margin: 20px 0;
+    width: 100%;
+}
+textarea::placeholder{
+    font-size: 15px; 
+}
+.contact textarea{
+    padding-left: 10px; 
+    font-size: 20px;
+    width: 100%;
+    height: 140px;
+    border-radius: 8px;
+    border: 1px solid #5d626b;
+}
+.contact button{
+    display: inline-block;
+    background-color: #4292bf;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.contact button:hover{
+    background: crimson;
+}
+.success, .error{
+    font-weight: 400;
+}
+footer{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+    background: #0e0d0d;
+    height: 40px;
+    color: white;
+}
+footer p{
+    padding-top: 6px;
+}
+footer a{
+    font-weight: 500;
+    color: #4292bf;
+}
+@media (max-width: 1210px) {
+    .contact textarea{
+        height: 190px;
+    }
+}
 @media (max-width: 1129px) {
     .sobre .sobre-content .left img{
         height: 350px;
@@ -450,15 +527,31 @@ section .titulos::after{
     .habilidades{
         font-size: 15px;
     }
+    .carousel img{
+        width: 60%;
+    }
+    .contact input{
+        width: 49.3%;
+    }
 }
 @media (max-width: 991px) {
     .max-width{
         padding: 0 50px;
     }
+    .carousel img{
+        width: 65%;
+    }
+    .contact input{
+        width: 49.4%;
+    }
 }
 @media (max-width: 947px){
     .max-width{
         max-width: 930px;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
     }
     .icon{
         position: absolute;
@@ -479,7 +572,7 @@ section .titulos::after{
     .navbar .menu-list{
         align-items: center;
         display: flex;
-        padding: 30px 0;
+        padding: 25px 0;
         flex-direction: column;
         position: fixed;
         width: 100%;
@@ -532,6 +625,31 @@ section .titulos::after{
         margin: 0 0 40px;
         width: 100%;
     }
+    .contact .right{
+        margin-bottom: 60px;
+    }
+    .contact .left, .contact .right{
+        justify-content: center;
+        width: 100%;
+    }
+    .contact .right p{
+        text-align: justify;
+    }
+    .contact input{
+        width: 49.6%;
+    }
+}
+@media (max-width: 840px) {
+    .carousel img{
+        width: 80%;
+    }
+    footer{
+        font-size: 12px;
+        height: 55px;
+    }
+    footer p{
+        padding-top: 10px;
+    }
 }
 @media (max-width: 690px) {
     .max-width{
@@ -540,15 +658,28 @@ section .titulos::after{
     .card{
         width: 100%;
     }
+    .carousel img{
+        width: 100%;
+        height: 400px;
+    }
+}
+@media (max-width: 600px) {
+    .contact input{
+        width: 49.2%;
+    }
 }
 @media (max-width: 500px) {
     .sobre .sobre-content .right .text{
         font-size: 19px;
     }
-
+    .carousel img{
+        width: 100%;
+        height: 300px;
+    }
 }
 @media (max-height: 870px) and (max-width: 947px) {
     #lua{
         display: none;
     }
 }
+
