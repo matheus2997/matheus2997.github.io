@@ -283,3 +283,47 @@ class FormSubmit {
     error: "<h1 class='error'>Não foi possível enviar sua mensagem.</h1>",
   });
   formSubmit.init();
+
+  // Função para animar o scroll suave
+function smoothScroll(target, duration) {
+    var targetElement = document.querySelector(target);
+    var targetPosition = targetElement.offsetTop - 100;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+  
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      var timeElapsed = currentTime - startTime;
+      var scrollAmount = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, scrollAmount);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+  
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+  
+    requestAnimationFrame(animation);
+  }
+  
+
+  function addSmoothScroll() {
+    var links = document.querySelectorAll('.menu-list a');
+    links.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        var target = this.getAttribute('href');
+        smoothScroll(target, 1000);
+      });
+    });
+  }
+  
+
+  document.addEventListener('DOMContentLoaded', function () {
+    addSmoothScroll();
+  });
+  
