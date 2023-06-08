@@ -309,7 +309,6 @@ function smoothScroll(target, duration) {
   
     requestAnimationFrame(animation);
   }
-  
 
   function addSmoothScroll() {
     var links = document.querySelectorAll('.menu-list a');
@@ -322,7 +321,6 @@ function smoothScroll(target, duration) {
     });
   }
   
-
   document.addEventListener('DOMContentLoaded', function () {
     addSmoothScroll();
   });
